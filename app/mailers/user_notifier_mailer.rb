@@ -1,2 +1,3 @@
 class UserNotifierMailer < ApplicationMailer
+  
 end

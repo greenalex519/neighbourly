@@ -33,7 +33,6 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        UserNotifierMailer.send_signup_email(current_user).deliver
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
@@ -75,6 +74,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :description, :price, :user)
+      params.require(:item).permit(:image, :name, :description, :price, :user, :remove_image)
     end
 end

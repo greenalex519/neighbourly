@@ -10,7 +10,11 @@ gem 'rails_12factor', group: :production
 
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
+gem 'carrierwave', '~> 1.0'
 
+gem 'mini_magick', '~> 4.3'
+
+gem 'fog-aws'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
