@@ -83,3 +83,4 @@ production:
   database: neighbourly_production
   username: neighbourly
   password: <%= ENV['NEIGHBOURLY_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
