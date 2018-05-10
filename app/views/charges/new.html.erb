@@ -1,19 +1,59 @@
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
-  </article>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Neighbourly</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
-          data-locale="auto"></script>
-<% end %>
-<a href="/"><button type="button">back</button></a>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+
+    <a href="/"><h1> Neighbourly </h2></a>
+
+    <div class="user_menu">
+    <%= link_to "Login", new_user_session_path %>
+    <%= link_to "Signup", new_user_registration_path %>
+    <%= link_to "Account Edit", edit_user_registration_path %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    </div>
+
+     <p class="alert"><%= alert %></p>
+
+     <%= form_tag(items_path, :method => "get", id: "search-form") do %>
+      <div class="row">
+        <%= text_field_tag :search, params[:search], placeholder: "Search Items", class: "form-control col-6 mr-2" %>
+        <%= submit_tag "Search", :name => nil, class: "btn btn-blue font-white col-4" %>
+      </div>
+
+    <% end %>
+
+
+    <%= form_tag charges_path do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+        <label class="amount">
+          <span>Amount: $5.00</span>
+        </label>
+      </article>
+
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="A month's subscription"
+              data-amount="500"
+              data-locale="auto"></script>
+    <% end %>
+    <a href="/"><button type="button">back</button></a>
+
+  </body>
+
+  <footer>
+    <p> copyright Greenalex519© | all rights reserved</p>
+  </footer>
+</html>
