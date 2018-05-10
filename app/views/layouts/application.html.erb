@@ -11,13 +11,21 @@
 
   <body>
 
+    <a href="/"><h1> Neighbourly </h2></a>
+
+    <div class="user_menu">
     <%= link_to "Login", new_user_session_path %>
-<%= link_to "Signup", new_user_registration_path %>
-<%= link_to "Account Edit", edit_user_registration_path %>
-<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <%= link_to "Signup", new_user_registration_path %>
+    <%= link_to "Account Edit", edit_user_registration_path %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    </div>
 
      <p class="alert"><%= alert %></p>
 
     <%= yield %>
   </body>
+
+  <footer>
+    <p> copyright Greenalex519© | all rights reserved</p>
+  </footer>
 </html>
