@@ -23,6 +23,7 @@
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><a href="/charges/new"><button type="rent">Rent</button></a></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Item', new_item_path %>
+<button type="New Item"><%= link_to 'New Item', new_item_path %></button>
