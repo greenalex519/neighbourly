@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Problem Definition and Solution
+---
+###Problem
 
-Things you may want to cover:
+###Solution
 
-* Ruby version
+##User Stories
+---
+###Preliminary User Stories
 
-* System dependencies
+###Detailed User Stories
 
-* Configuration
+##Workflow
+---
 
-* Database creation
+##Style Guide
+---
 
-* Database initialization
+##WireFrames
 
-* How to run the test suite
+##ERD
+---
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##Trello
+---
